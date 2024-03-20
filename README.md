@@ -4,3 +4,4 @@
 - Bradman Davis
 - Hexon Hartley Jimenez
 - John Short
+- Jake Regattieri
