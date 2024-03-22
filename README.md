@@ -5,4 +5,3 @@
 - Hexon Hartley Jimenez
 - John Short
 - Jake Regattieri
-- Matthew Ballarino
