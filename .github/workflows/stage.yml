@@ -1,0 +1,29 @@
+yaml
+name: Deploy stage
+on:
+  push:
+    branches:
+      - stage
+jobs:
+  build-and-push:
+    runs-on: jcu-web-stage
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: build
+          path: build
+      - name: Create SSH key
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          host='host.example.com'
+          ssh-keyscan -H "$SSH_IP" > ~/.ssh/known_hosts
+        shell: bash
+        env:
+          SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+          SSH_IP: ${{secrets.SSH_STAGE_IP}}
+      - name: Deploy with rsync
+        run: rsync -rav --delete build/ "$SSH_USER"@"$SSH_IP":/
+        env:
+          SSH_USER: ${{secrets.SSH_STAGE_USER}}
+          SSH_IP: ${{secrets.SSH_STAGE_IP}}
