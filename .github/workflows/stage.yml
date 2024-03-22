@@ -13,15 +13,9 @@ jobs:
       - name: Create SSH key
         run: |
           install -m 600 -D /dev/null ~/.ssh/id_rsa
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          echo "${{secrets.SSH_STAGE_PRIVATE_KEY}}" > ~/.ssh/id_rsa
           host='host.example.com'
-          ssh-keyscan -H "$SSH_IP" > ~/.ssh/known_hosts
+          ssh-keyscan -H "${{secrets.SSH_STAGE_IP}}" > ~/.ssh/known_hosts
         shell: bash
-        env:
-          SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
-          SSH_IP: ${{secrets.SSH_STAGE_IP}}
       - name: Deploy with rsync
-        run: rsync -rav --delete build/ "$SSH_USER"@"$SSH_IP":/var/www/html/wp-content/themes/u3a-theme
-        env:
-          SSH_USER: ${{secrets.SSH_STAGE_USER}}
-          SSH_IP: ${{secrets.SSH_STAGE_IP}}
+        run: rsync -rav --delete build/ "${{secrets.SSH_STAGE_USER}}"@"${{secrets.SSH_STAGE_IP}}":/var/www/html/wp-content/themes/u3a-theme
