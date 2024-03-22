@@ -1,5 +1,3 @@
-yaml
-name: Deploy stage
 on:
   push:
     branches:
