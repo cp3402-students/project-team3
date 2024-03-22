@@ -6,7 +6,7 @@ jobs:
   build-and-push:
     runs-on: jcu-web-stage
     steps:
-      - uses: actions/download-artifact@v2
+      - uses: actions/checkout@v3
         with:
           name: build
           path: build
@@ -21,7 +21,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
           SSH_IP: ${{secrets.SSH_STAGE_IP}}
       - name: Deploy with rsync
-        run: rsync -rav --delete build/ "$SSH_USER"@"$SSH_IP":/
+        run: rsync -rav --delete build/ "$SSH_USER"@"$SSH_IP":/var/www/html/wp-content/themes/u3a-theme
         env:
           SSH_USER: ${{secrets.SSH_STAGE_USER}}
           SSH_IP: ${{secrets.SSH_STAGE_IP}}
