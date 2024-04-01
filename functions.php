@@ -96,7 +96,6 @@ function u3a_theme_setup() {
 			'height'      => 250,
 			'width'       => 250,
 			'flex-width'  => true,
-			'flex-height' => true,
 		)
 	);
 }

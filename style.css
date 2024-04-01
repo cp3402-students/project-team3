@@ -671,8 +671,38 @@ textarea {
 }
 
 .site-branding {
-	min-height: 70px;
+	text-align: center;
 }
+
+.custom-logo-link {
+	width: 250px;
+	height: auto;
+}
+
+.site-branding-text {
+	text-align: center;
+}
+
+@media screen and (min-width: 37.5em) {
+	.site-branding {
+		display: flex;
+	}
+
+	.custom-logo-link {
+		margin-right: 3em;
+		img {
+			display: block;
+		}
+	}
+
+	.site-branding-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		text-align: left;
+	}
+}
+
 
 
 /*--------------------------------------------------------------
