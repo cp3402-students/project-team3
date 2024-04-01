@@ -25,6 +25,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
+# Variables
 # Generic
 	- Normalize
 	- Box sizing
@@ -49,6 +50,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Variables
+--------------------------------------------------------------*/
+:root {
+	--primary-theme-color: #2D69A7;
+	--secondary-theme-color: #3C82CB;
+	--theme-background-color: #E2ECFF;
+}
 
 /*--------------------------------------------------------------
 # Generic
@@ -640,6 +649,7 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+/* Main Content */
 .site-main {
 	padding: 1.5em;
 
@@ -647,6 +657,23 @@ textarea {
 		padding: 3em;
 	}
 }
+
+/* Header */
+.site-header {
+	position: relative;
+	padding: 1.5em;
+	color: #ffffff;
+	background-color: var(--primary-theme-color);
+
+	@media screen and (min-width: 37.5em) {
+		padding: 3em;
+	}
+}
+
+.site-branding {
+	min-height: 70px;
+}
+
 
 /*--------------------------------------------------------------
 # Components
