@@ -139,6 +139,7 @@ add_action( 'widgets_init', 'u3a_theme_widgets_init' );
 function u3a_theme_scripts() {
 	wp_enqueue_style( 'u3a-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'u3a-theme-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'u3a-theme-roboto', get_template_directory_uri().'/fonts/roboto.css', false, '1.0', 'all' );
 
 	wp_enqueue_script( 'u3a-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 

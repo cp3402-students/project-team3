@@ -1057,6 +1057,16 @@ body {
 /* Header
 --------------------------------------------- */
 
+.site-header {
+	padding: 0 0 2em 0;
+}
+
+.site-branding {
+	text-align: center;
+	padding: 1em 3em;
+	background-color: #3974AD;
+}
+
 .site-branding-text {
 	justify-content: space-between;
 }
@@ -1067,6 +1077,33 @@ body {
 	font-weight: 700;
 	font-style: italic;
 	margin: 0;
+}
+
+.head-info {
+	display: flex;
+	justify-content: flex-end;
+	align-items: baseline;
+	padding: 0.5em 3em;
+	font-family: 'Roboto Condensed', 'Roboto', sans-serif;
+}
+
+.head-info > * {
+	margin: 0 0 0 2em;
+}
+
+.head-info .info-text {
+	color: #FEE199;
+	font-weight: 800;
+}
+
+.head-info .login, .head-info .login:active, .head-info .login:visited {
+	color: #fff;
+	font-weight: 800;
+	text-decoration: none;
+}
+
+.head-info .login:hover {
+	text-decoration: underline;
 }
 
 nav a, nav a:visited {

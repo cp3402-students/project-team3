@@ -26,6 +26,10 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'u3a-theme' ); ?></a>
 
 	<header id="masthead" class="site-header">
+		<div class="head-info">
+			<p class="info-text">(07)466 777 777 | admin@u3aonline.org.au</p>
+			<a class="login" href="/login">Members Login</a>
+		</div>
 		<div class="site-branding">
 			<?php the_custom_logo(); ?>
             <div class="site-branding-text">
