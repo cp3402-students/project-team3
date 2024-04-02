@@ -1041,7 +1041,6 @@ textarea {
 
 body {
 	height: 100vh;
-	background-color: var(--theme-background-color);
 	font-family: 'Roboto', sans-serif;
 }
 
