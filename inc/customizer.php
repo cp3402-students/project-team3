@@ -39,6 +39,27 @@ function u3a_theme_customize_register( $wp_customize ) {
 		},
 	]);
 
+	// Footer copyright text
+	$wp_customize->add_setting('u3a_theme_footer_copyright', [
+		'default'           => __( 'Copyright © 2024, All Rights Reserved'),
+		'sanitize_callback' => 'sanitize_text_field',
+		'transport'         => 'postMessage',
+	]);
+	$wp_customize->add_control('u3a_theme_footer_copyright', [
+		'type'        => 'text',
+		'priority'    => 10,
+		'section'     => 'u3a_theme_site_text',
+		'label'       => __('Header Info'),
+		'description' => __('Text that appears on the bottom of the page')
+	]);
+	$wp_customize->selective_refresh->add_partial('u3a_theme_footer_copyright', [
+		'selector'            => '.site-info',
+		'container_inclusive' => false,
+		'render_callback'     => function() {
+			echo get_theme_mod('u3a_theme_footer_copyright');
+		},
+	]);
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';

@@ -18,7 +18,7 @@
 			<?php dynamic_sidebar('footer_area_three'); ?>
 		</div>
 		<div class="site-info">
-			Copyright © 2024, All Rights Reserved
+			<?= get_theme_mod('u3a_theme_footer_copyright'); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
