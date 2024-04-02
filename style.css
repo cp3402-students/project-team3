@@ -1054,6 +1054,32 @@ body {
 	flex: 1;
 }
 
+/* Header
+--------------------------------------------- */
+
+.site-branding-text {
+	justify-content: space-between;
+}
+
+.site-description {
+	color: #F7FF86;
+	font-size: 1.5em;
+	font-weight: 700;
+	font-style: italic;
+	margin: 0;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+nav a:hover {
+	color: #eee;
+	text-decoration: underline;
+}
+
 /* Footer
 --------------------------------------------- */
 
