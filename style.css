@@ -1069,7 +1069,7 @@ body {
 	margin: 0;
 }
 
-nav a {
+nav a, nav a:visited {
 	color: #fff;
 	text-decoration: none;
 	font-weight: 600;
@@ -1078,6 +1078,22 @@ nav a {
 nav a:hover {
 	color: #eee;
 	text-decoration: underline;
+}
+
+nav ul li {
+	padding: 0 1em;
+}
+
+nav ul li:first-child {
+	padding: 0 1em 0 0;
+}
+
+nav ul li:last-child {
+	padding: 0 0 0 1em ;
+}
+
+nav ul li:only-child {
+	padding: 0;
 }
 
 /* Footer
