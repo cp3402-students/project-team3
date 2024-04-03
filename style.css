@@ -1053,10 +1053,6 @@ body {
 	color: #ffffff;
 	background-color: var(--primary-theme-color);
 
-	@media screen and (min-width: 37.5em) {
-		padding: 3em;
-	}
-
 	padding: 0 0 2em 0;
 }
 
