@@ -649,60 +649,7 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
-/* Main Content */
-.site-main {
-	padding: 1.5em;
 
-	@media screen and (min-width: 37.5em) {
-		padding: 3em;
-	}
-}
-
-/* Header */
-.site-header {
-	position: relative;
-	padding: 1.5em;
-	color: #ffffff;
-	background-color: var(--primary-theme-color);
-
-	@media screen and (min-width: 37.5em) {
-		padding: 3em;
-	}
-}
-
-.site-branding {
-	text-align: center;
-}
-
-.custom-logo-link {
-	width: 250px;
-	height: auto;
-}
-
-.site-branding-text {
-	text-align: center;
-}
-
-@media screen and (min-width: 37.5em) {
-	.site-branding {
-		display: flex;
-	}
-
-	.custom-logo-link {
-		margin-right: 3em;
-		img {
-			display: block;
-			min-width: 250px;
-		}
-	}
-
-	.site-branding-text {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-evenly;
-		text-align: left;
-	}
-}
 
 /*--------------------------------------------------------------
 # Components
@@ -1034,6 +981,64 @@ textarea {
 /*--------------------------------------------------------------
 # u3a custom
 --------------------------------------------------------------*/
+/* Moved from layouts (Re-position these into appropriate places
+--------------------------------------------- */
+/* Main Content */
+.site-main {
+	padding: 1.5em;
+
+	@media screen and (min-width: 37.5em) {
+		padding: 3em;
+	}
+}
+
+/* Header */
+.site-header {
+	position: relative;
+	padding: 1.5em;
+	color: #ffffff;
+	background-color: var(--primary-theme-color);
+
+	@media screen and (min-width: 37.5em) {
+		padding: 3em;
+	}
+}
+
+.site-branding {
+	text-align: center;
+}
+
+.custom-logo-link {
+	width: 250px;
+	height: auto;
+}
+
+.site-branding-text {
+	text-align: center;
+}
+
+@media screen and (min-width: 37.5em) {
+	.site-branding {
+		display: flex;
+	}
+
+	.custom-logo-link {
+		margin-right: 3em;
+		img {
+			display: block;
+			min-width: 250px;
+		}
+	}
+
+	.site-branding-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		text-align: left;
+	}
+}
+
+
 
 /* Global
 --------------------------------------------- */
