@@ -1037,6 +1037,8 @@ body {
 .site-main {
 	flex: 1;
 	padding: 1.5em;
+	max-width: 1280px;
+	margin: auto;
 
 	@media screen and (min-width: 37.5em) {
 		padding: 3em;
