@@ -983,27 +983,7 @@ textarea {
 --------------------------------------------------------------*/
 /* Moved from layouts (Re-position these into appropriate places
 --------------------------------------------- */
-/* Main Content */
-.site-main {
-	padding: 1.5em;
-
-	@media screen and (min-width: 37.5em) {
-		padding: 3em;
-	}
-}
-
 /* Header */
-.site-header {
-	position: relative;
-	padding: 1.5em;
-	color: #ffffff;
-	background-color: var(--primary-theme-color);
-
-	@media screen and (min-width: 37.5em) {
-		padding: 3em;
-	}
-}
-
 .site-branding {
 	text-align: center;
 }
@@ -1056,12 +1036,25 @@ body {
 
 .site-main {
 	flex: 1;
+	padding: 1.5em;
+
+	@media screen and (min-width: 37.5em) {
+		padding: 3em;
+	}
 }
 
 /* Header
 --------------------------------------------- */
 
 .site-header {
+	position: relative;
+	color: #ffffff;
+	background-color: var(--primary-theme-color);
+
+	@media screen and (min-width: 37.5em) {
+		padding: 3em;
+	}
+
 	padding: 0 0 2em 0;
 }
 
