@@ -26,7 +26,7 @@ get_header();
         ?>
         <div class="hero-section">
             <?php // Fullscreen image background html here ?>
-            <img class="heroImage" src="<?php echo esc_url( get_theme_mod( 'u3a_theme_hero_image' ) ); ?>" alt="Call to action background">
+<!--        <img class="heroImage" src="<?php echo esc_url( get_theme_mod( 'u3a_theme_hero_image' ) ); ?>" alt="Call to action background"> -->
 <!--        <h2 class="welcome-header">--><?php //echo $welcomeTitle; ?><!--</h2>-->
 <!--        <p class="welcome-message">--><?php //echo $welcomeMessage; ?><!--</p>-->
 <!--        <button class="cta-btn">--><?php //echo $welcomeButtonText; ?><!--</button>-->
