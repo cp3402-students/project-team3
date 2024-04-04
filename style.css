@@ -1128,6 +1128,17 @@ nav ul li:only-child {
 	padding: 0;
 }
 
+/* Homepage Style
+--------------------------------------------- */
+
+.home .entry-header {
+  display: none;
+}
+
+.home main {
+  padding-top: 0;
+}
+
 /* Footer
 --------------------------------------------- */
 
