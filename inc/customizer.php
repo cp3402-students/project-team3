@@ -93,6 +93,51 @@ function u3a_theme_customize_register( $wp_customize ) {
         },
     ));
 
+    // Non-member heading
+    $wp_customize->add_setting('u3a_non_member_heading', array(
+        'default'           => __( 'Join Today'),
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'postMessage',
+    ));
+
+    $wp_customize->add_control('u3a_non_member_heading', array(
+        'type'        => 'text',
+        'priority'    => 10,
+        'section'     => 'u3a_theme_homepage_settings',
+        'label'       => __('Non-member Call to Action Heading'),
+        'description' => __('The call to action heading text for accounts that are not members.')
+    ));
+
+    $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
+        'selector'            => '.call-to-action-heading',
+        'container_inclusive' => false,
+        'render_callback'     => function() {
+            echo get_theme_mod('u3a_non_member_heading');
+        },
+    ));
+
+    // Member & Admin heading
+    $wp_customize->add_setting('u3a_member_heading', array(
+        'default'           => __( 'Welcome back'),
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'postMessage',
+    ));
+
+    $wp_customize->add_control('u3a_member_heading', array(
+        'type'        => 'text',
+        'priority'    => 10,
+        'section'     => 'u3a_theme_homepage_settings',
+        'label'       => __('Member Call to Action Heading'),
+        'description' => __('The call to action heading text for members.')
+    ));
+
+    $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
+        'selector'            => '.call-to-action-heading',
+        'container_inclusive' => false,
+        'render_callback'     => function() {
+            echo get_theme_mod('u3a_member_heading');
+        },
+    ));
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';

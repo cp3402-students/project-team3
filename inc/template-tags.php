@@ -130,7 +130,6 @@ if ( ! function_exists( 'u3a_theme_post_thumbnail' ) ) :
 			<div class="post-thumbnail">
 				<?php the_post_thumbnail();
 				if ( is_front_page() ) {
-                    $callToActionHeader = get_theme_mod( 'call-to-action-heading' );
 				?>
                         <button class="btn call-to-action-btn"></button>
 				<?php
