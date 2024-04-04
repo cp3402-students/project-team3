@@ -128,7 +128,14 @@ if ( ! function_exists( 'u3a_theme_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
+				<?php the_post_thumbnail();
+				if(is_front_page())
+				{
+				?>
+					<button> SignUp Now!</button>
+				<?php
+				}
+				?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
