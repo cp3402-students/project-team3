@@ -116,6 +116,52 @@ function u3a_theme_customize_register( $wp_customize ) {
         },
     ));
 
+    // Visitor button text
+    $wp_customize->add_setting('u3a_cta_visitor_button_text', array(
+        'default'           => __( 'Become a member today'),
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'postMessage',
+    ));
+
+    $wp_customize->add_control('u3a_cta_visitor_button_text', array(
+        'type'        => 'text',
+        'priority'    => 30,
+        'section'     => 'u3a_theme_homepage_settings',
+        'label'       => __('Visitor Call to Action Button Text'),
+        'description' => __('The call to action text on the button.')
+    ));
+
+    $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
+        'selector'            => '.call-to-action-btn',
+        'container_inclusive' => false,
+        'render_callback'     => function() {
+            echo get_theme_mod('u3a_cta_visitor_button_text');
+        },
+    ));
+
+    // Visitor button link
+    $wp_customize->add_setting('u3a_cta_visitor_button_link', array(
+        'default'           => __( ''),
+        'sanitize_callback' => 'sanitize_url',
+        'transport'         => 'postMessage',
+    ));
+
+    $wp_customize->add_control('u3a_cta_visitor_button_link', array(
+        'type'        => 'url',
+        'priority'    => 30,
+        'section'     => 'u3a_theme_homepage_settings',
+        'label'       => __('Visitor Call to Action Button Link'),
+        'description' => __('Where the user should go when they click the button.')
+    ));
+
+    $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
+        'selector'            => '.call-to-action-link',
+        'container_inclusive' => false,
+        'render_callback'     => function() {
+            echo get_theme_mod('u3a_cta_visitor_button_link');
+        },
+    ));
+
     // Non-member heading
     $wp_customize->add_setting('u3a_cta_non_member_heading', array(
         'default'           => __( 'Join Today'),
