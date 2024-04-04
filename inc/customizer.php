@@ -70,6 +70,30 @@ function u3a_theme_customize_register( $wp_customize ) {
 		},
 	]);
 
+    // Visitor heading
+    $wp_customize->add_setting('u3a_visitor_heading', array(
+        'default'           => __( 'Join Today'),
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'postMessage',
+    ));
+
+    $wp_customize->add_control('u3a_visitor_heading', array(
+        'type'        => 'text',
+        'priority'    => 10,
+        'section'     => 'u3a_theme_homepage_settings',
+        'label'       => __('Visitor Call to Action Heading'),
+        'description' => __('The call to action heading text for non-logged in users.')
+    ));
+
+    $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
+        'selector'            => '.call-to-action-heading',
+        'container_inclusive' => false,
+        'render_callback'     => function() {
+            echo get_theme_mod('u3a_visitor_heading');
+        },
+    ));
+
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
