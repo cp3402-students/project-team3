@@ -130,6 +130,9 @@ if ( ! function_exists( 'u3a_theme_post_thumbnail' ) ) :
 			<div class="post-thumbnail">
 				<?php the_post_thumbnail();
 				if ( is_front_page() ) {
+                    if ( !is_user_logged_in() ) {
+                        $callToActionHeading = get_theme_mod( 'vistor-call-to-action-heading' );
+                    }
 				?>
                         <button class="btn call-to-action-btn"></button>
 				<?php

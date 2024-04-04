@@ -71,13 +71,13 @@ function u3a_theme_customize_register( $wp_customize ) {
 	]);
 
     // Visitor heading
-    $wp_customize->add_setting('u3a_visitor_heading', array(
+    $wp_customize->add_setting('u3a_cta_visitor_heading', array(
         'default'           => __( 'Join Today'),
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'postMessage',
     ));
 
-    $wp_customize->add_control('u3a_visitor_heading', array(
+    $wp_customize->add_control('u3a_cta_visitor_heading', array(
         'type'        => 'text',
         'priority'    => 10,
         'section'     => 'u3a_theme_homepage_settings',
@@ -89,18 +89,18 @@ function u3a_theme_customize_register( $wp_customize ) {
         'selector'            => '.call-to-action-heading',
         'container_inclusive' => false,
         'render_callback'     => function() {
-            echo get_theme_mod('u3a_visitor_heading');
+            echo get_theme_mod('u3a_cta_visitor_heading');
         },
     ));
 
     // Non-member heading
-    $wp_customize->add_setting('u3a_non_member_heading', array(
+    $wp_customize->add_setting('u3a_cta_non_member_heading', array(
         'default'           => __( 'Join Today'),
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'postMessage',
     ));
 
-    $wp_customize->add_control('u3a_non_member_heading', array(
+    $wp_customize->add_control('u3a_cta_non_member_heading', array(
         'type'        => 'text',
         'priority'    => 10,
         'section'     => 'u3a_theme_homepage_settings',
@@ -112,7 +112,7 @@ function u3a_theme_customize_register( $wp_customize ) {
         'selector'            => '.call-to-action-heading',
         'container_inclusive' => false,
         'render_callback'     => function() {
-            echo get_theme_mod('u3a_non_member_heading');
+            echo get_theme_mod('u3a_cta_non_member_heading');
         },
     ));
 
