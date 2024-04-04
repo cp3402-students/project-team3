@@ -149,8 +149,8 @@ if ( ! function_exists( 'u3a_theme_post_thumbnail' ) ) :
 //                    }
 				?>
                         <div class="hero-section-content">
-                            <h2 class="u3a-cta-heading"><?php echo $callToActionHeading ?></h2>
-                            <p class="u3a-cta-text"><?php echo $callToActionText ?></p>
+                            <h2 class="call-to-action-heading"><?php echo $callToActionHeading ?></h2>
+                            <p class="call-to-action-text"><?php echo $callToActionText ?></p>
                             <a href="<?php echo esc_html($callToActionButtonLink) ?>"><button class="btn call-to-action-btn"><?php echo $callToActionButtonText ?></button></a>
                         </div>
 				<?php
