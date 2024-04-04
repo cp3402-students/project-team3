@@ -70,19 +70,6 @@ function u3a_theme_customize_register( $wp_customize ) {
 		},
 	]);
 
-    // Hero Image for frontpage.php
-    $wp_customize->add_setting('u3a_theme_hero_image', array(
-        'default'           =>  '',
-        'transport'         => 'postMessage',
-    ));
-
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'u3a_theme_hero_image', array(
-        'type'        => 'image',
-        'section'     => 'u3a_theme_homepage_settings',
-        'label'       => __('U3A Call to action background image'),
-        'description' => __('The image that appears behind the call to action section on the homepage.')
-    )));
-
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
