@@ -1139,6 +1139,17 @@ nav ul li:only-child {
   padding-top: 0;
 }
 
+.home .post-thumbnail {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home .post-thumbnail button {
+  position: absolute;
+}
+
 /* Footer
 --------------------------------------------- */
 
