@@ -18,7 +18,15 @@ function u3a_theme_customize_register( $wp_customize ) {
 		'capability' => 'edit_theme_options',
 	]);
 
-	// Header info text
+    // New Section for u3a homepage settings
+    $wp_customize->add_section( 'u3a_theme_homepage_settings', array(
+        'title'       => __( 'U3A Homepage Control', 'u3a-theme' ),
+        'priority'    => 30,
+        'description' => __( 'Customize the layout of your site homepage', 'u3a-theme' )
+    ) );
+
+
+    // Header info text
 	$wp_customize->add_setting('u3a_theme_info_text', [
 		'default'           => __( '(07)466 777 777 | admin@u3aonline.org.au'),
 		'sanitize_callback' => 'sanitize_text_field',
@@ -45,6 +53,7 @@ function u3a_theme_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_text_field',
 		'transport'         => 'postMessage',
 	]);
+
 	$wp_customize->add_control('u3a_theme_footer_copyright', [
 		'type'        => 'text',
 		'priority'    => 10,
@@ -52,6 +61,7 @@ function u3a_theme_customize_register( $wp_customize ) {
 		'label'       => __('Header Info'),
 		'description' => __('Text that appears on the bottom of the page')
 	]);
+
 	$wp_customize->selective_refresh->add_partial('u3a_theme_footer_copyright', [
 		'selector'            => '.site-info',
 		'container_inclusive' => false,
@@ -59,6 +69,19 @@ function u3a_theme_customize_register( $wp_customize ) {
 			echo get_theme_mod('u3a_theme_footer_copyright');
 		},
 	]);
+
+    // Hero Image for frontpage.php
+    $wp_customize->add_setting('u3a_theme_hero_image', array(
+        'default'           =>  '',
+        'transport'         => 'postMessage',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'u3a_theme_hero_image', array(
+        'type'        => 'image',
+        'section'     => 'u3a_theme_homepage_settings',
+        'label'       => __('U3A Call to action background image'),
+        'description' => __('The image that appears behind the call to action section on the homepage.')
+    )));
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
