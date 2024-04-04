@@ -79,7 +79,7 @@ function u3a_theme_customize_register( $wp_customize ) {
 
     $wp_customize->add_control('u3a_cta_visitor_heading', array(
         'type'        => 'text',
-        'priority'    => 10,
+        'priority'    => 30,
         'section'     => 'u3a_theme_homepage_settings',
         'label'       => __('Visitor Call to Action Heading'),
         'description' => __('The call to action heading text for non-logged in users.')
@@ -93,6 +93,29 @@ function u3a_theme_customize_register( $wp_customize ) {
         },
     ));
 
+    // Visitor paragraph
+    $wp_customize->add_setting('u3a_cta_visitor_text', array(
+        'default'           => __( 'Become a member today'),
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'postMessage',
+    ));
+
+    $wp_customize->add_control('u3a_cta_visitor_text', array(
+        'type'        => 'text',
+        'priority'    => 30,
+        'section'     => 'u3a_theme_homepage_settings',
+        'label'       => __('Visitor Call to Action Paragraph'),
+        'description' => __('The call to action text below the heading for non-logged in users.')
+    ));
+
+    $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
+        'selector'            => '.call-to-action-text',
+        'container_inclusive' => false,
+        'render_callback'     => function() {
+            echo get_theme_mod('u3a_cta_visitor_text');
+        },
+    ));
+
     // Non-member heading
     $wp_customize->add_setting('u3a_cta_non_member_heading', array(
         'default'           => __( 'Join Today'),
@@ -102,7 +125,7 @@ function u3a_theme_customize_register( $wp_customize ) {
 
     $wp_customize->add_control('u3a_cta_non_member_heading', array(
         'type'        => 'text',
-        'priority'    => 10,
+        'priority'    => 20,
         'section'     => 'u3a_theme_homepage_settings',
         'label'       => __('Non-member Call to Action Heading'),
         'description' => __('The call to action heading text for accounts that are not members.')
