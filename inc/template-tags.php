@@ -130,11 +130,29 @@ if ( ! function_exists( 'u3a_theme_post_thumbnail' ) ) :
 			<div class="post-thumbnail">
 				<?php the_post_thumbnail();
 				if ( is_front_page() ) {
-                    if ( !is_user_logged_in() ) {
-                        $callToActionHeading = get_theme_mod( 'vistor-call-to-action-heading' );
-                    }
+                    $user = get_current_user();
+
+                    // Move back into if statement once the roles are working.
+                    $callToActionHeading = get_theme_mod( 'u3a_cta_visitor_heading' );
+                    $callToActionText = get_theme_mod( 'u3a_cta_visitor_text' );
+                    $callToActionButtonText = get_theme_mod( 'u3a_cta_visitor_button_text' );
+                    $callToActionButtonLink = get_theme_mod( 'u3a_cta_visitor_button_link' );
+
+//                    if ( !is_user_logged_in() | is_user_logged_in() ) {
+//                    }
+                    // This doesn't work atm because $user-roles does not work in template-tags.
+//                    elseif ( in_array( 'non-member', (array)$user->roles )) {
+//                        $callToActionHeading = get_theme_mod( 'u3a_cta_non_member_heading' );
+//                    }
+//                    elseif (  )) {
+//                        $callToActionHeading = get_theme_mod( 'u3a_cta_member_heading' );
+//                    }
 				?>
-                        <button class="btn call-to-action-btn"></button>
+                        <div class="hero-section-content">
+                            <h2 class="u3a-cta-heading"><?php echo $callToActionHeading ?></h2>
+                            <p class="u3a-cta-text"><?php echo $callToActionText ?></p>
+                            <a href="<?php echo esc_html($callToActionButtonLink) ?>"><button class="btn call-to-action-btn"><?php echo $callToActionButtonText ?></button></a>
+                        </div>
 				<?php
 				}
 				?>
