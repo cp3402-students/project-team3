@@ -277,6 +277,75 @@ function u3a_theme_customize_register( $wp_customize ) {
         },
     ));
 
+    // Member paragraph
+    $wp_customize->add_setting('u3a_cta_member_text', array(
+        'default'           => __( 'Thanks for being a member'),
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'postMessage',
+    ));
+
+    $wp_customize->add_control('u3a_cta_member_text', array(
+        'type'        => 'text',
+        'priority'    => 10,
+        'section'     => 'u3a_theme_homepage_settings',
+        'label'       => __('Member Call to Action Paragraph'),
+        'description' => __('The call to action text below the heading for logged-in members.')
+    ));
+
+    $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
+        'selector'            => '.call-to-action-text',
+        'container_inclusive' => false,
+        'render_callback'     => function() {
+            echo get_theme_mod('u3a_cta_member_text');
+        },
+    ));
+
+    // Member button text
+    $wp_customize->add_setting('u3a_cta_member_button_text', array(
+        'default'           => __( 'Go to members section'),
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'postMessage',
+    ));
+
+    $wp_customize->add_control('u3a_cta_member_button_text', array(
+        'type'        => 'text',
+        'priority'    => 10,
+        'section'     => 'u3a_theme_homepage_settings',
+        'label'       => __('Member Call to Action Button Text'),
+        'description' => __('The call to action text on the button for members.')
+    ));
+
+    $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
+        'selector'            => '.call-to-action-btn',
+        'container_inclusive' => false,
+        'render_callback'     => function() {
+            echo get_theme_mod('u3a_cta_member_button_text');
+        },
+    ));
+
+    // Member button link
+    $wp_customize->add_setting('u3a_cta_member_button_link', array(
+        'default'           => __(''),
+        'sanitize_callback' => 'sanitize_url',
+        'transport'         => 'postMessage',
+    ));
+
+    $wp_customize->add_control('u3a_cta_member_button_link', array(
+        'type'        => 'url',
+        'priority'    => 10,
+        'section'     => 'u3a_theme_homepage_settings',
+        'label'       => __('Member Call to Action Button Link'),
+        'description' => __('Where the user should go when they click the button.')
+    ));
+
+    $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
+        'selector'            => '.call-to-action-link',
+        'container_inclusive' => false,
+        'render_callback'     => function() {
+            echo get_theme_mod('u3a_cta_member_button_link');
+        },
+    ));
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
