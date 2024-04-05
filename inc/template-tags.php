@@ -130,23 +130,32 @@ if ( ! function_exists( 'u3a_theme_post_thumbnail' ) ) :
 			<div class="post-thumbnail">
 				<?php the_post_thumbnail();
 				if ( is_front_page() ) {
-                    $user = get_current_user();
+                    $user = wp_get_current_user();
 
-                    // Move back into if statement once the roles are working.
-                    $callToActionHeading = get_theme_mod( 'u3a_cta_visitor_heading' );
-                    $callToActionText = get_theme_mod( 'u3a_cta_visitor_text' );
-                    $callToActionButtonText = get_theme_mod( 'u3a_cta_visitor_button_text' );
-                    $callToActionButtonLink = get_theme_mod( 'u3a_cta_visitor_button_link' );
+                    if ( is_user_logged_in() && in_array( 'non-member', (array)$user->roles ) ) {
+                        $headingThemeMod = 'u3a_cta_non_member_heading';
+                        $textThemeMod = 'u3a_cta_non_member_text';
+                        $buttonTextThemeMod = 'u3a_cta_non_member_button_text';
+                        $buttonLinkThemeMod = 'u3a_cta_non_member_button_link';
+                    }
+                    elseif ( is_user_logged_in() && ( in_array( 'member', (array)$user->roles ) ) || current_user_can( 'edit-pages')  ) {
+                        $headingThemeMod = 'u3a_cta_member_heading';
+                        $textThemeMod = 'u3a_cta_member_text';
+                        $buttonTextThemeMod = 'u3a_cta_member_button_text';
+                        $buttonLinkThemeMod = 'u3a_cta_member_button_link';
+                    }
+                    else {
+                        $headingThemeMod = 'u3a_cta_visitor_heading';
+                        $textThemeMod = 'u3a_cta_visitor_text';
+                        $buttonTextThemeMod = 'u3a_cta_visitor_button_text';
+                        $buttonLinkThemeMod = 'u3a_cta_visitor_button_link';
+                    }
 
-//                    if ( !is_user_logged_in() | is_user_logged_in() ) {
-//                    }
-                    // This doesn't work atm because $user-roles does not work in template-tags.
-//                    elseif ( in_array( 'non-member', (array)$user->roles )) {
-//                        $callToActionHeading = get_theme_mod( 'u3a_cta_non_member_heading' );
-//                    }
-//                    elseif (  )) {
-//                        $callToActionHeading = get_theme_mod( 'u3a_cta_member_heading' );
-//                    }
+                    $callToActionHeading = get_theme_mod( $headingThemeMod );
+                    $callToActionText = get_theme_mod( $textThemeMod );
+                    $callToActionButtonText = get_theme_mod( $buttonTextThemeMod );
+                    $callToActionButtonLink = get_theme_mod( $buttonLinkThemeMod );
+
 				?>
                         <div class="hero-section-content">
                             <h2 class="call-to-action-heading"><?php echo $callToActionHeading ?></h2>
