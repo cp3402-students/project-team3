@@ -160,7 +160,7 @@ if ( ! function_exists( 'u3a_theme_post_thumbnail' ) ) :
                         <div class="hero-section-content">
                             <h2 class="call-to-action-heading"><?php echo $callToActionHeading ?></h2>
                             <p class="call-to-action-text"><?php echo $callToActionText ?></p>
-                            <a class="call-to-action-link" href="<?php echo esc_html($callToActionButtonLink) ?>"><button class="btn call-to-action-btn"><?php echo $callToActionButtonText ?></button></a>
+                            <a class="call-to-action-link" href="<?php echo esc_html($callToActionButtonLink) ?>"><button class="wp-block-button__link wp-element-button call-to-action-btn"><?php echo $callToActionButtonText ?></button></a>
                         </div>
 				<?php
 				}
