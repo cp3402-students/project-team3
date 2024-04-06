@@ -1146,8 +1146,9 @@ nav ul li:only-child {
   align-items: center;
 }
 
-.home .post-thumbnail button {
+.post-thumbnail .hero-section-content {
   position: absolute;
+	text-align: center;
 }
 
 /* Footer
