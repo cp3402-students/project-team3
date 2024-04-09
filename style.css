@@ -1169,6 +1169,10 @@ nav ul li:only-child {
     margin: auto;
 }
 
+.announcements-section {
+    text-align: center;
+}
+
 /* Buttons
 --------------------------------------------- */
 .wp-block-button__link {

@@ -165,6 +165,7 @@ if ( ! function_exists( 'u3a_theme_post_thumbnail' ) ) :
                 </div><!-- .post-thumbnail -->
 
                         <div class="announcements-section">
+                            <h2 class="announcements-section-header">Announcements</h2>
                             <?php
                             $categoryName = 'Announcement';
                             $query = new WP_Query(array('category_name' => $categoryName, 'posts_per_page' => '1'));
@@ -174,7 +175,7 @@ if ( ! function_exists( 'u3a_theme_post_thumbnail' ) ) :
                                 <?php
                                     while ($query->have_posts()) :
                                         $query->the_post();
-                                        the_title('<h2>', '</h2>');
+                                        the_title('<h3>', '</h3>');
                                         the_content('View Announcement');
                                         $categoryID = get_cat_ID( $categoryName )?>
 
