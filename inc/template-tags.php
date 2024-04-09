@@ -167,7 +167,7 @@ if ( ! function_exists( 'u3a_theme_post_thumbnail' ) ) :
                         <div class="announcements-section">
                             <h2 class="announcements-section-header">Announcements</h2>
                             <?php
-                            $categoryName = 'Announcement';
+                            $categoryName = 'announcements';
                             $query = new WP_Query(array('category_name' => $categoryName, 'posts_per_page' => '1'));
 
                             if ($query->have_posts()) : ?>
