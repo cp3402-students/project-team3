@@ -163,15 +163,14 @@ if ( ! function_exists( 'u3a_theme_post_thumbnail' ) ) :
                             <a class="wp-block-button wp-block-button__link wp-element-button call-to-action-button" href="<?php echo esc_html($callToActionButtonLink) ?>"><?php echo $callToActionButtonText ?></a>
                         </div>
                 </div><!-- .post-thumbnail -->
-
-                        <div class="announcements-section">
-                            <h2 class="announcements-section-header">Announcements</h2>
                             <?php
                             $categoryName = 'announcements';
                             $query = new WP_Query(array('category_name' => $categoryName, 'posts_per_page' => '1'));
 
                             if ($query->have_posts()) : ?>
                                 <!-- the loop -->
+                                <div class="announcements-section">
+                                    <h2 class="announcements-section-header">Announcements</h2>
                                 <?php
                                     while ($query->have_posts()) :
                                         $query->the_post();
@@ -185,11 +184,8 @@ if ( ! function_exists( 'u3a_theme_post_thumbnail' ) ) :
                                 <!-- end of the loop -->
 
                                 <?php wp_reset_postdata(); ?>
-
-                            <?php else : ?>
-                                <p><?php esc_html_e( 'Sorry, no posts matched your criteria.', 'u3a-theme'); ?></p>
+                                </div>
                             <?php endif; }?>
-                        </div>
 
 		<?php else : ?>
 
