@@ -160,7 +160,7 @@ if ( ! function_exists( 'u3a_theme_post_thumbnail' ) ) :
                         <div class="hero-section-content">
                             <h2 class="call-to-action-heading"><?php echo $callToActionHeading ?></h2>
                             <p class="call-to-action-text"><?php echo $callToActionText ?></p>
-                            <a class="call-to-action-link" href="<?php echo esc_html($callToActionButtonLink) ?>"><button class="wp-block-button__link wp-element-button call-to-action-btn"><?php echo $callToActionButtonText ?></button></a>
+                            <a class="wp-block-button wp-block-button__link wp-element-button call-to-action-button" href="<?php echo esc_html($callToActionButtonLink) ?>"><?php echo $callToActionButtonText ?></a>
                         </div>
                 </div><!-- .post-thumbnail -->
 
@@ -178,7 +178,7 @@ if ( ! function_exists( 'u3a_theme_post_thumbnail' ) ) :
                                         the_content('View Announcement');
                                         $categoryID = get_cat_ID( $categoryName )?>
 
-                                        <a href="<?php echo get_category_link( $categoryID ); ?>" title="Announcements"><button class="wp-block-button__link wp-element-button announcement-button">View All Announcements</button></a>
+                                        <a class="wp-block-button wp-block-button__link wp-element-button announcement-button" href="<?php echo get_category_link( $categoryID ); ?>" title="Announcements">View All Announcements</a>
 
                                     <?php endwhile; ?>
                                 <!-- end of the loop -->

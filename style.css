@@ -1151,6 +1151,16 @@ nav ul li:only-child {
     text-align: center;
 }
 
+/* Hero Section Style */
+.hero-section-content {
+    max-width: 70%;
+}
+
+.call-to-action-btn {
+    background-color: var(--secondary-theme-color);
+}
+
+
 /* Footer
 --------------------------------------------- */
 
