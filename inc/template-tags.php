@@ -186,7 +186,7 @@ if ( ! function_exists( 'u3a_theme_post_thumbnail' ) ) :
                                 <?php wp_reset_postdata(); ?>
 
                             <?php else : ?>
-                                <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+                                <p><?php esc_html_e( 'Sorry, no posts matched your criteria.', 'u3a-theme'); ?></p>
                             <?php endif; }?>
                         </div>
 
