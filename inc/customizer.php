@@ -12,8 +12,8 @@
  */
 function u3a_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'u3a_theme_site_text', [
-		'title' => __('Site Text'),
-		'description' => __( 'Change site text here' ),
+		'title' => __('Site Text', 'u3a-theme'),
+		'description' => __( 'Change site text here', 'u3a-theme'),
 		'priority' => 160,
 		'capability' => 'edit_theme_options',
 	]);
@@ -28,7 +28,7 @@ function u3a_theme_customize_register( $wp_customize ) {
 
     // Header info text
 	$wp_customize->add_setting('u3a_theme_info_text', [
-		'default'           => __( '(07)466 777 777 | admin@u3aonline.org.au'),
+		'default'           => __( '(07)466 777 777 | admin@u3aonline.org.au', 'u3a-theme'),
 		'sanitize_callback' => 'sanitize_text_field',
 		'transport'         => 'postMessage',
 	]);
@@ -36,20 +36,20 @@ function u3a_theme_customize_register( $wp_customize ) {
 		'type'        => 'text',
 		'priority'    => 10,
 		'section'     => 'u3a_theme_site_text',
-		'label'       => __('Header Info'),
-		'description' => __('Text that appears on the top right-hand corner')
+		'label'       => __('Header Info', 'u3a-theme'),
+		'description' => __('Text that appears on the top right-hand corner', 'u3a-theme')
 	]);
 	$wp_customize->selective_refresh->add_partial('u3a_theme_info_text', [
 		'selector'            => '.info-text',
 		'container_inclusive' => false,
 		'render_callback'     => function() {
-			echo get_theme_mod('u3a_theme_info_text');
+			echo esc_html(get_theme_mod('u3a_theme_info_text'));
 		},
 	]);
 
 	// Footer copyright text
 	$wp_customize->add_setting('u3a_theme_footer_copyright', [
-		'default'           => __( 'Copyright © 2024, All Rights Reserved'),
+		'default'           => __( 'Copyright © 2024, All Rights Reserved', 'u3a-theme'),
 		'sanitize_callback' => 'sanitize_text_field',
 		'transport'         => 'postMessage',
 	]);
@@ -58,21 +58,21 @@ function u3a_theme_customize_register( $wp_customize ) {
 		'type'        => 'text',
 		'priority'    => 10,
 		'section'     => 'u3a_theme_site_text',
-		'label'       => __('Header Info'),
-		'description' => __('Text that appears on the bottom of the page')
+		'label'       => __('Header Info', 'u3a-theme'),
+		'description' => __('Text that appears on the bottom of the page', 'u3a-theme')
 	]);
 
 	$wp_customize->selective_refresh->add_partial('u3a_theme_footer_copyright', [
 		'selector'            => '.site-info',
 		'container_inclusive' => false,
 		'render_callback'     => function() {
-			echo get_theme_mod('u3a_theme_footer_copyright');
+			echo esc_html(get_theme_mod('u3a_theme_footer_copyright'));
 		},
 	]);
 
     // Visitor heading
     $wp_customize->add_setting('u3a_cta_visitor_heading', array(
-        'default'           => __( 'Join Today'),
+        'default'           => __( 'Join Today', 'u3a-theme'),
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'postMessage',
     ));
@@ -81,21 +81,21 @@ function u3a_theme_customize_register( $wp_customize ) {
         'type'        => 'text',
         'priority'    => 30,
         'section'     => 'u3a_theme_homepage_settings',
-        'label'       => __('Visitor Call to Action Heading'),
-        'description' => __('The call to action heading text for non-logged in users.')
+        'label'       => __('Visitor Call to Action Heading', 'u3a-theme'),
+        'description' => __('The call to action heading text for non-logged in users.', 'u3a-theme')
     ));
 
     $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
         'selector'            => '.call-to-action-heading',
         'container_inclusive' => false,
         'render_callback'     => function() {
-            echo get_theme_mod('u3a_cta_visitor_heading');
+            echo esc_html(get_theme_mod('u3a_cta_visitor_heading'));
         },
     ));
 
     // Visitor paragraph
     $wp_customize->add_setting('u3a_cta_visitor_text', array(
-        'default'           => __( 'Become a member today'),
+        'default'           => __( 'Become a member today', 'u3a-theme'),
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'postMessage',
     ));
@@ -104,21 +104,21 @@ function u3a_theme_customize_register( $wp_customize ) {
         'type'        => 'text',
         'priority'    => 30,
         'section'     => 'u3a_theme_homepage_settings',
-        'label'       => __('Visitor Call to Action Paragraph'),
-        'description' => __('The call to action text below the heading for non-logged in users.')
+        'label'       => __('Visitor Call to Action Paragraph', 'u3a-theme'),
+        'description' => __('The call to action text below the heading for non-logged in users.', 'u3a-theme')
     ));
 
     $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
         'selector'            => '.call-to-action-text',
         'container_inclusive' => false,
         'render_callback'     => function() {
-            echo get_theme_mod('u3a_cta_visitor_text');
+            echo esc_html(get_theme_mod('u3a_cta_visitor_text'));
         },
     ));
 
     // Visitor button text
     $wp_customize->add_setting('u3a_cta_visitor_button_text', array(
-        'default'           => __( 'Become a member today'),
+        'default'           => __( 'Become a member today', 'u3a-theme'),
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'postMessage',
     ));
@@ -127,21 +127,21 @@ function u3a_theme_customize_register( $wp_customize ) {
         'type'        => 'text',
         'priority'    => 30,
         'section'     => 'u3a_theme_homepage_settings',
-        'label'       => __('Visitor Call to Action Button Text'),
-        'description' => __('The call to action text on the button.')
+        'label'       => __('Visitor Call to Action Button Text', 'u3a-theme'),
+        'description' => __('The call to action text on the button.', 'u3a-theme')
     ));
 
     $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
         'selector'            => '.call-to-action-btn',
         'container_inclusive' => false,
         'render_callback'     => function() {
-            echo get_theme_mod('u3a_cta_visitor_button_text');
+            echo esc_html(get_theme_mod('u3a_cta_visitor_button_text'));
         },
     ));
 
     // Visitor button link
     $wp_customize->add_setting('u3a_cta_visitor_button_link', array(
-        'default'           => __( ''),
+        'default'           => __('', 'u3a-theme'),
         'sanitize_callback' => 'sanitize_url',
         'transport'         => 'postMessage',
     ));
@@ -150,21 +150,21 @@ function u3a_theme_customize_register( $wp_customize ) {
         'type'        => 'url',
         'priority'    => 30,
         'section'     => 'u3a_theme_homepage_settings',
-        'label'       => __('Visitor Call to Action Button Link'),
-        'description' => __('Where the user should go when they click the button.')
+        'label'       => __('Visitor Call to Action Button Link', 'u3a-theme'),
+        'description' => __('Where the user should go when they click the button.', 'u3a-theme')
     ));
 
     $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
         'selector'            => '.call-to-action-link',
         'container_inclusive' => false,
         'render_callback'     => function() {
-            echo get_theme_mod('u3a_cta_visitor_button_link');
+            echo esc_url(get_theme_mod('u3a_cta_visitor_button_link'));
         },
     ));
 
     // Non-member heading
     $wp_customize->add_setting('u3a_cta_non_member_heading', array(
-        'default'           => __( 'Join Today'),
+        'default'           => __( 'Join Today', 'u3a-theme'),
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'postMessage',
     ));
@@ -173,21 +173,21 @@ function u3a_theme_customize_register( $wp_customize ) {
         'type'        => 'text',
         'priority'    => 20,
         'section'     => 'u3a_theme_homepage_settings',
-        'label'       => __('Non-member Call to Action Heading'),
-        'description' => __('The call to action heading text for accounts that are not members.')
+        'label'       => __('Non-member Call to Action Heading', 'u3a-theme'),
+        'description' => __('The call to action heading text for accounts that are not members.', 'u3a-theme')
     ));
 
     $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
         'selector'            => '.call-to-action-heading',
         'container_inclusive' => false,
         'render_callback'     => function() {
-            echo get_theme_mod('u3a_cta_non_member_heading');
+            echo esc_html(get_theme_mod('u3a_cta_non_member_heading'));
         },
     ));
 
     // Non-member paragraph
     $wp_customize->add_setting('u3a_cta_non_member_text', array(
-        'default'           => __( 'Become a member today'),
+        'default'           => __( 'Become a member today', 'u3a-theme'),
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'postMessage',
     ));
@@ -196,21 +196,21 @@ function u3a_theme_customize_register( $wp_customize ) {
         'type'        => 'text',
         'priority'    => 20,
         'section'     => 'u3a_theme_homepage_settings',
-        'label'       => __('Non-member Call to Action Paragraph'),
-        'description' => __('The call to action text below the heading for logged-in non-members.')
+        'label'       => __('Non-member Call to Action Paragraph', 'u3a-theme'),
+        'description' => __('The call to action text below the heading for logged-in non-members.', 'u3a-theme')
     ));
 
     $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
         'selector'            => '.call-to-action-text',
         'container_inclusive' => false,
         'render_callback'     => function() {
-            echo get_theme_mod('u3a_cta_non_member_text');
+            echo esc_html(get_theme_mod('u3a_cta_non_member_text'));
         },
     ));
 
     // Non-member button text
     $wp_customize->add_setting('u3a_cta_non_member_button_text', array(
-        'default'           => __( 'Become a member today'),
+        'default'           => __( 'Become a member today', 'u3a-theme'),
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'postMessage',
     ));
@@ -219,21 +219,21 @@ function u3a_theme_customize_register( $wp_customize ) {
         'type'        => 'text',
         'priority'    => 20,
         'section'     => 'u3a_theme_homepage_settings',
-        'label'       => __('Non-member Call to Action Button Text'),
-        'description' => __('The call to action text on the button for non-members.')
+        'label'       => __('Non-member Call to Action Button Text', 'u3a-theme'),
+        'description' => __('The call to action text on the button for non-members.', 'u3a-theme')
     ));
 
     $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
         'selector'            => '.call-to-action-btn',
         'container_inclusive' => false,
         'render_callback'     => function() {
-            echo get_theme_mod('u3a_cta_non_member_button_text');
+            echo esc_html(get_theme_mod('u3a_cta_non_member_button_text'));
         },
     ));
 
     // Non-member button link
     $wp_customize->add_setting('u3a_cta_non_member_button_link', array(
-        'default'           => __(''),
+        'default'           => __('', 'u3a-theme'),
         'sanitize_callback' => 'sanitize_url',
         'transport'         => 'postMessage',
     ));
@@ -242,21 +242,21 @@ function u3a_theme_customize_register( $wp_customize ) {
         'type'        => 'url',
         'priority'    => 20,
         'section'     => 'u3a_theme_homepage_settings',
-        'label'       => __('Non-member Call to Action Button Link'),
-        'description' => __('Where the user should go when they click the button.')
+        'label'       => __('Non-member Call to Action Button Link', 'u3a-theme'),
+        'description' => __('Where the user should go when they click the button.', 'u3a-theme')
     ));
 
     $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
         'selector'            => '.call-to-action-link',
         'container_inclusive' => false,
         'render_callback'     => function() {
-            echo get_theme_mod('u3a_cta_non_member_button_link');
+            echo esc_url(get_theme_mod('u3a_cta_non_member_button_link'));
         },
     ));
 
     // Member & Admin heading
     $wp_customize->add_setting('u3a_member_heading', array(
-        'default'           => __( 'Welcome back'),
+        'default'           => __( 'Welcome back', 'u3a-theme'),
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'postMessage',
     ));
@@ -265,21 +265,21 @@ function u3a_theme_customize_register( $wp_customize ) {
         'type'        => 'text',
         'priority'    => 10,
         'section'     => 'u3a_theme_homepage_settings',
-        'label'       => __('Member Call to Action Heading'),
-        'description' => __('The call to action heading text for members.')
+        'label'       => __('Member Call to Action Heading', 'u3a-theme'),
+        'description' => __('The call to action heading text for members.', 'u3a-theme')
     ));
 
     $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
         'selector'            => '.call-to-action-heading',
         'container_inclusive' => false,
         'render_callback'     => function() {
-            echo get_theme_mod('u3a_member_heading');
+            echo esc_html(get_theme_mod('u3a_member_heading'));
         },
     ));
 
     // Member paragraph
     $wp_customize->add_setting('u3a_cta_member_text', array(
-        'default'           => __( 'Thanks for being a member'),
+        'default'           => __( 'Thanks for being a member', 'u3a-theme'),
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'postMessage',
     ));
@@ -288,21 +288,21 @@ function u3a_theme_customize_register( $wp_customize ) {
         'type'        => 'text',
         'priority'    => 10,
         'section'     => 'u3a_theme_homepage_settings',
-        'label'       => __('Member Call to Action Paragraph'),
-        'description' => __('The call to action text below the heading for logged-in members.')
+        'label'       => __('Member Call to Action Paragraph', 'u3a-theme'),
+        'description' => __('The call to action text below the heading for logged-in members.', 'u3a-theme')
     ));
 
     $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
         'selector'            => '.call-to-action-text',
         'container_inclusive' => false,
         'render_callback'     => function() {
-            echo get_theme_mod('u3a_cta_member_text');
+            echo esc_html(get_theme_mod('u3a_cta_member_text'));
         },
     ));
 
     // Member button text
     $wp_customize->add_setting('u3a_cta_member_button_text', array(
-        'default'           => __( 'Go to members section'),
+        'default'           => __( 'Go to members section', 'u3a-theme'),
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'postMessage',
     ));
@@ -311,21 +311,21 @@ function u3a_theme_customize_register( $wp_customize ) {
         'type'        => 'text',
         'priority'    => 10,
         'section'     => 'u3a_theme_homepage_settings',
-        'label'       => __('Member Call to Action Button Text'),
-        'description' => __('The call to action text on the button for members.')
+        'label'       => __('Member Call to Action Button Text', 'u3a-theme'),
+        'description' => __('The call to action text on the button for members.', 'u3a-theme')
     ));
 
     $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
         'selector'            => '.call-to-action-btn',
         'container_inclusive' => false,
         'render_callback'     => function() {
-            echo get_theme_mod('u3a_cta_member_button_text');
+            echo esc_html(get_theme_mod('u3a_cta_member_button_text'));
         },
     ));
 
     // Member button link
     $wp_customize->add_setting('u3a_cta_member_button_link', array(
-        'default'           => __(''),
+        'default'           => __('', 'u3a-theme'),
         'sanitize_callback' => 'sanitize_url',
         'transport'         => 'postMessage',
     ));
@@ -334,15 +334,15 @@ function u3a_theme_customize_register( $wp_customize ) {
         'type'        => 'url',
         'priority'    => 10,
         'section'     => 'u3a_theme_homepage_settings',
-        'label'       => __('Member Call to Action Button Link'),
-        'description' => __('Where the user should go when they click the button.')
+        'label'       => __('Member Call to Action Button Link', 'u3a-theme'),
+        'description' => __('Where the user should go when they click the button.', 'u3a-theme')
     ));
 
     $wp_customize->selective_refresh->add_partial('u3a_theme_homepage_settings', array(
         'selector'            => '.call-to-action-link',
         'container_inclusive' => false,
         'render_callback'     => function() {
-            echo get_theme_mod('u3a_cta_member_button_link');
+            echo esc_url(get_theme_mod('u3a_cta_member_button_link'));
         },
     ));
 
