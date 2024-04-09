@@ -12,17 +12,10 @@ get_header();
         <?php
         if ( 'posts' == get_option( 'show_on_front' ) ) {
             include( get_home_template() );
-        } else {
-            // This should still exist to handle the "announcements' seciton probably as that feels separate from the hero image call to action.
         }
-
+        get_template_part('template-parts/content', 'page');
         ?>
-        <div class="announcements-overview">
-        </div>
-        <?php
-            get_template_part( 'template-parts/content', 'page' );
-        ?>
-    </main><!-- #main -->
+        </main><!-- #main -->
 
 <?php
 get_sidebar();

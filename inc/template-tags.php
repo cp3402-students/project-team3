@@ -162,10 +162,33 @@ if ( ! function_exists( 'u3a_theme_post_thumbnail' ) ) :
                             <p class="call-to-action-text"><?php echo $callToActionText ?></p>
                             <a class="call-to-action-link" href="<?php echo esc_html($callToActionButtonLink) ?>"><button class="wp-block-button__link wp-element-button call-to-action-btn"><?php echo $callToActionButtonText ?></button></a>
                         </div>
-				<?php
-				}
-				?>
-			</div><!-- .post-thumbnail -->
+                </div><!-- .post-thumbnail -->
+
+                        <div class="announcements-section">
+                            <?php
+                            $categoryName = 'Announcement';
+                            $query = new WP_Query(array('category_name' => $categoryName, 'posts_per_page' => '1'));
+
+                            if ($query->have_posts()) : ?>
+                                <!-- the loop -->
+                                <?php
+                                    while ($query->have_posts()) :
+                                        $query->the_post();
+                                        the_title('<h2>', '</h2>');
+                                        the_content('View Announcement');
+                                        $categoryID = get_cat_ID( $categoryName )?>
+
+                                        <a href="<?php echo get_category_link( $categoryID ); ?>" title="Announcements"><button class="wp-block-button__link wp-element-button announcement-button">View All Announcements</button></a>
+
+                                    <?php endwhile; ?>
+                                <!-- end of the loop -->
+
+                                <?php wp_reset_postdata(); ?>
+
+                            <?php else : ?>
+                                <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+                            <?php endif; }?>
+                        </div>
 
 		<?php else : ?>
 
