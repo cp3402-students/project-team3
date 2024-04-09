@@ -11,7 +11,7 @@ get_header();
     <main id="primary" class="site-main">
         <?php
         if ( 'posts' == get_option( 'show_on_front' ) ) {
-            include( get_home_template() );
+            get_home_template();
         }
         get_template_part('template-parts/content', 'page');
         ?>
