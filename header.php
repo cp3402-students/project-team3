@@ -27,7 +27,7 @@
 
 	<header id="masthead" class="site-header">
 		<div class="head-info">
-			<p class="info-text"><?= get_theme_mod('u3a_theme_info_text'); ?></p>
+			<p class="info-text"><?php get_theme_mod('u3a_theme_info_text'); ?></p>
 			<a class="login" href="/login">Members Login</a>
 		</div>
 		<div class="site-branding">
