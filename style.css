@@ -1151,14 +1151,32 @@ nav ul li:only-child {
     text-align: center;
 }
 
-/* Hero Section Style */
+/* Hero Section Style (Sub-heading of Home) */
 .hero-section-content {
     max-width: 70%;
+    margin: auto;
 }
 
-.call-to-action-btn {
-    background-color: var(--secondary-theme-color);
+/* Buttons
+--------------------------------------------- */
+.wp-block-button__link {
+    background-color: var(--primary-theme-color);
+    border: 1px solid #fff;
 }
+
+.wp-block-button__link:visited {
+    color: #fff;
+}
+
+.wp-block-button .wp-block-button__link.is-style-outline:not(.has-background), .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background) {
+    border-color: var(--primary-theme-color);
+    color: var(--primary-theme-color);
+}
+
+.wp-block-button .wp-block-button__link.is-style-outline:not(.has-background), .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+    background-color: #fff;
+}
+
 
 
 /* Footer
