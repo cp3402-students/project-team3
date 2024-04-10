@@ -1189,6 +1189,10 @@ nav ul li:only-child {
     color: var(--primary-theme-color);
 }
 
+.wp-block-button .wp-block-button__link.is-style-outline:not(.has-background), .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):visited {
+    color: var(--primary-theme-color);
+}
+
 .wp-block-button .wp-block-button__link.is-style-outline:not(.has-background), .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
     background-color: #fff;
 }
