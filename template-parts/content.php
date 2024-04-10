@@ -22,8 +22,15 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				u3a_theme_posted_on();
-				u3a_theme_posted_by();
+                if (isset($args['display-author'])) {
+                    if ( $args['display-author'] != 'false' ) {
+                        u3a_theme_posted_on();
+                        u3a_theme_posted_by();
+                    }
+                } else {
+                    u3a_theme_posted_on();
+                    u3a_theme_posted_by();
+                }
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
