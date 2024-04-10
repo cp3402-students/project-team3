@@ -25,6 +25,7 @@ get_header();
             if ( $query->have_posts() ) {
                 ?>
                 <h2 class="course-category-heading"><?php echo ucfirst(get_cat_name($subCategory)) ?> Courses</h2>
+                <div class="course-subcategory">
                 <?php
                 while ( $query->have_posts() ) :
                     $query->the_post();
@@ -45,6 +46,9 @@ get_header();
                 <?php
                 endwhile; // End of the loop.
             }
+            ?>
+            </div>
+            <?php
             wp_reset_postdata();
         }
         ?>

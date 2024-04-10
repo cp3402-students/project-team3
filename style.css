@@ -1218,7 +1218,7 @@ nav ul li:only-child {
     font-size: 0.9em;
 }
 
-.site-main > .course-card:nth-of-type(odd) {
+.course-subcategory > .course-card:nth-of-type(even) {
     background: #e0e0e0;
 }
 
