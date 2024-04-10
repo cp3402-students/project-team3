@@ -255,13 +255,13 @@ function u3a_theme_customize_register( $wp_customize ) {
     ));
 
     // Member & Admin heading
-    $wp_customize->add_setting('u3a_member_heading', array(
+    $wp_customize->add_setting('u3a_cta_member_heading', array(
         'default'           => __( 'Welcome back', 'u3a-theme'),
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'postMessage',
     ));
 
-    $wp_customize->add_control('u3a_member_heading', array(
+    $wp_customize->add_control('u3a_cta_member_heading', array(
         'type'        => 'text',
         'priority'    => 10,
         'section'     => 'u3a_theme_homepage_settings',
@@ -273,7 +273,7 @@ function u3a_theme_customize_register( $wp_customize ) {
         'selector'            => '.call-to-action-heading',
         'container_inclusive' => false,
         'render_callback'     => function() {
-            echo esc_html(get_theme_mod('u3a_member_heading'));
+            echo esc_html(get_theme_mod('u3a_cta_member_heading'));
         },
     ));
 
