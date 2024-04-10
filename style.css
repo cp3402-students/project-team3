@@ -1197,6 +1197,30 @@ nav ul li:only-child {
     background-color: #fff;
 }
 
+/* Courses Template
+--------------------------------------------- */
+.course-card {
+    min-height: 5em;
+    padding: 0.5em;
+    border-radius: 20px;
+}
+
+.course-title {
+    width: auto;
+    float: left;
+}
+
+.course-button {
+    width: auto;
+    float: right;
+    margin: 1em;
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+}
+
+.site-main > .course-card:nth-of-type(odd) {
+    background: #e0e0e0;
+}
 
 
 /* Footer
