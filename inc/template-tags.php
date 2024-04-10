@@ -131,7 +131,7 @@ if ( ! function_exists( 'u3a_theme_post_thumbnail' ) ) :
                         $buttonTextThemeMod = 'u3a_cta_non_member_button_text';
                         $buttonLinkThemeMod = 'u3a_cta_non_member_button_link';
                     }
-                    elseif ( is_user_logged_in() && ( in_array( 'member', (array)$user->roles ) ) || current_user_can( 'edit-pages')  ) {
+                    elseif ( is_user_logged_in() && ( in_array( 'member', (array)$user->roles ) ) || current_user_can( 'edit_pages')  ) {
                         $headingThemeMod = 'u3a_cta_member_heading';
                         $textThemeMod = 'u3a_cta_member_text';
                         $buttonTextThemeMod = 'u3a_cta_member_button_text';

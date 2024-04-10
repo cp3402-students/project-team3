@@ -30,7 +30,7 @@ get_header();
                     $query->the_post();
 
                     $user = wp_get_current_user();
-                    if ( is_user_logged_in() && ( in_array( 'member', (array)$user->roles ) ) || current_user_can( 'edit-pages')) {
+                    if ( ( is_user_logged_in() & ( in_array( 'member', (array)$user->roles ) ) ) || current_user_can( 'edit_pages')) {
                         $buttonText = 'View Course';
                         $buttonLink = get_post_permalink();
                     } else {
