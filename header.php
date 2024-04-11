@@ -21,7 +21,14 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+<?php wp_body_open();
+if (is_user_logged_in()) {
+    $loginText = "Logout";
+    $loginLink = "/logout/?redirect_to=/login/";
+} else {
+    $loginText = "Member Login";
+    $loginLink = "/login/";
+}?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'u3a-theme' ); ?></a>
 
@@ -29,7 +36,7 @@
 		<div class="head-info">
 			<div class="head-wrapper">
 				<p class="info-text"><?php get_theme_mod('u3a_theme_info_text'); ?></p>
-				<a class="login" href="/login">Members Login</a>
+				<a class="login" href="<?php echo esc_url($loginLink) ?>"><?php echo $loginText ?></a>
 			</div>
 		</div>
 		<div class="site-branding">
