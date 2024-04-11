@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+      - stage
+jobs:
+  build-and-push:
+    runs-on: jcu-web-stage
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          name: build
+          path: build
+      - name: Create SSH key
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{secrets.SSH_STAGE_PRIVATE_KEY}}" > ~/.ssh/id_rsa
+          ssh-keyscan -H "${{secrets.SSH_STAGE_IP}}" > ~/.ssh/known_hosts
+        shell: bash
+      - name: Deploy with rsync
+        run: rsync -rav --delete build/ "${{secrets.SSH_STAGE_USER}}"@"${{secrets.SSH_STAGE_IP}}":/var/www/html/wp-content/themes/u3a-theme
