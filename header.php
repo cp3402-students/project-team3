@@ -27,30 +27,34 @@
 
 	<header id="masthead" class="site-header">
 		<div class="head-info">
-			<p class="info-text"><?php get_theme_mod('u3a_theme_info_text'); ?></p>
-			<a class="login" href="/login">Members Login</a>
+			<div class="head-wrapper">
+				<p class="info-text"><?php get_theme_mod('u3a_theme_info_text'); ?></p>
+				<a class="login" href="/login">Members Login</a>
+			</div>
 		</div>
 		<div class="site-branding">
-			<?php the_custom_logo(); ?>
-            <div class="site-branding-text">
-                <?php
-                    $u3a_theme_description = get_bloginfo( 'description', 'display' );
-                    if ( $u3a_theme_description || is_customize_preview() ) :
-                        ?>
-                        <p class="site-description"><?php echo $u3a_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-                <?php endif; ?>
-				<nav id="site-navigation" class="main-navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'u3a-theme' ); ?></button>
+			<div class="head-wrapper">
+				<?php the_custom_logo(); ?>
+				<div class="site-branding-text">
 					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'menu-1',
-							'menu_id'        => 'primary-menu',
-						)
-					);
-					?>
-				</nav><!-- #site-navigation -->
-            </div><!-- .site-branding-text -->
+						$u3a_theme_description = get_bloginfo( 'description', 'display' );
+						if ( $u3a_theme_description || is_customize_preview() ) :
+							?>
+							<p class="site-description"><?php echo $u3a_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+					<?php endif; ?>
+					<nav id="site-navigation" class="main-navigation">
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'u3a-theme' ); ?></button>
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-1',
+								'menu_id'        => 'primary-menu',
+							)
+						);
+						?>
+					</nav><!-- #site-navigation -->
+				</div><!-- .site-branding-text -->
+			</div>
 		</div><!-- .site-branding -->
 
 	</header><!-- #masthead -->
