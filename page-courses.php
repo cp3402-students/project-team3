@@ -40,7 +40,10 @@ get_header();
                     }
                     ?>
                     <div class="course-card">
-                        <h3 class="course-title"><?php echo get_the_title()?></h3>
+                        <div class="course-card-details">
+                            <h3 class="course-title"><?php echo get_the_title()?></h3>
+                            <p class="course-description"><?php echo get_the_excerpt() ?></p>
+                        </div>
                         <a class="course-button wp-element-button wp-block-button__link" href="<?php echo $buttonLink ?>"><?php echo $buttonText ?></a>
                     </div>
                 <?php
