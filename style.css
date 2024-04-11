@@ -713,6 +713,14 @@ textarea {
     display: block;
 }
 
+/* Hamburger menu. */
+.menu-toggle {
+  background-color: #3974AD;
+  border: none;
+  font-size: 2em;
+  color: #fff;
+}
+
 @media screen and (min-width: 37.5em) {
 
     .menu-toggle {
@@ -725,9 +733,9 @@ textarea {
 }
 
 .site-main .comment-navigation,
-.site-main
+.site-main,
 .posts-navigation,
-.site-main
+.site-main,
 .post-navigation {
     margin: 0 0 1.5em;
 }
