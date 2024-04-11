@@ -43,7 +43,7 @@
 							<p class="site-description"><?php echo $u3a_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 					<?php endif; ?>
 					<nav id="site-navigation" class="main-navigation">
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'u3a-theme' ); ?></button>
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="hamburger-icon">&#9776</span></button>
 						<?php
 						wp_nav_menu(
 							array(
