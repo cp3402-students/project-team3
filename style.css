@@ -1092,6 +1092,17 @@ textarea {
     font-size: 1.25rem;
 }
 
+input[type="submit"] {
+    background-color: var(--primary-theme-color);
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 9999px;
+    box-shadow: none;
+    text-decoration: none;
+    padding: calc(.667em + 2px) calc(1.333em + 2px);
+    font-size: 1.125em;
+}
+
 /* Header
 --------------------------------------------- */
 
