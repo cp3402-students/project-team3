@@ -1101,6 +1101,7 @@ input[type="submit"] {
     text-decoration: none;
     padding: calc(.667em + 2px) calc(1.333em + 2px);
     font-size: 1.125em;
+    cursor: pointer;
 }
 
 /* Header
