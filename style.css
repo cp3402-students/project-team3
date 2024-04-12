@@ -729,6 +729,7 @@ textarea {
 
     .main-navigation ul {
         display: flex;
+        flex-wrap: wrap;
     }
 }
 
@@ -996,6 +997,12 @@ textarea {
     text-align: center;
 }
 
+.site-branding .head-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .custom-logo-link {
     width: 250px;
     height: auto;
@@ -1005,9 +1012,20 @@ textarea {
     text-align: center;
 }
 
+.main-navigation {
+    display: flex;
+    flex-direction: column;
+}
+
 @media screen and (min-width: 37.5em) {
     .site-branding {
         display: flex;
+    }
+
+    .site-branding .head-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
     }
 
     .custom-logo-link {
@@ -1024,6 +1042,11 @@ textarea {
         flex-direction: column;
         justify-content: space-evenly;
         text-align: left;
+    }
+
+    .main-navigation {
+        display: flex;
+        flex-direction: row;
     }
 }
 
