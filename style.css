@@ -1268,7 +1268,7 @@ nav ul li:only-child {
 --------------------------------------------- */
 .wp-block-button__link {
     background-color: var(--primary-theme-color);
-    border: 1px solid #fff;
+    /*border: 1px solid #fff;*/
 }
 
 .wp-block-button__link:hover,
