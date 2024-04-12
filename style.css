@@ -1239,6 +1239,7 @@ nav ul li:only-child {
     border: 1px solid #fff;
 }
 
+.wp-block-button__link:hover,
 .wp-block-button__link:visited {
     color: #fff;
 }
