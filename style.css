@@ -1244,6 +1244,10 @@ nav ul li:only-child {
     color: #fff;
 }
 
+.wp-block-button__link:hover {
+    background-color: #467cb5;
+}
+
 .wp-block-button .wp-block-button__link.is-style-outline:not(.has-background), .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background) {
     border-color: var(--primary-theme-color);
     color: var(--primary-theme-color);
