@@ -35,7 +35,7 @@ if (is_user_logged_in()) {
 	<header id="masthead" class="site-header">
 		<div class="head-info">
 			<div class="head-wrapper">
-				<p class="info-text"><?php echo get_theme_mod('u3a_theme_info_text'); ?></p>
+				<p class="info-text"><?php echo esc_html(get_theme_mod('u3a_theme_info_text')); ?></p>
 				<a class="login" href="<?php echo esc_url($loginLink) ?>"><?php echo $loginText ?></a>
 			</div>
 		</div>
