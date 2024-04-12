@@ -1018,6 +1018,12 @@ textarea {
 }
 
 @media screen and (min-width: 37.5em) {
+
+    .custom-logo {
+        width: auto;
+        height: auto;
+    }
+233 by 144 pixels 
     .site-branding {
         display: flex;
     }
@@ -1210,12 +1216,14 @@ nav ul li {
     padding: 0 1em;
 }
 
-nav ul li:first-child {
-    padding: 0 1em 0 0;
-}
+@media screen and (min-width: 37.5em) {
+    nav ul li:first-child {
+        padding: 0 1em 0 0;
+    }
 
-nav ul li:last-child {
-    padding: 0 0 0 1em;
+    nav ul li:last-child {
+        padding: 0 0 0 1em;
+    }
 }
 
 nav ul li:only-child {
@@ -1352,7 +1360,6 @@ nav ul li:only-child {
         width: 33%;
     }
 }
-
 
 .footer-columns a {
     text-decoration: none;
