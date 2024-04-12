@@ -18,7 +18,7 @@
 			<?php dynamic_sidebar('footer_area_three'); ?>
 		</div>
 		<div class="site-info">
-			<?php get_theme_mod('u3a_theme_footer_copyright'); ?>
+			<?php echo get_theme_mod('u3a_theme_footer_copyright'); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
