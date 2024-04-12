@@ -1321,6 +1321,7 @@ nav ul li:only-child {
     color: #fff;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .site-info {
@@ -1330,10 +1331,28 @@ nav ul li:only-child {
 
 .footer-columns {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     color: #fff;
     margin-bottom: 1.5em;
+    max-width: 1280px;
+    width: 100%;
+    flex-direction: column;
 }
+
+.footer-columns section {
+    width: 100%;
+}
+
+@media screen and (min-width: 37.5em) {
+    .footer-columns {
+        flex-direction: row;
+    }
+
+    .footer-columns section {
+        width: 33%;
+    }
+}
+
 
 .footer-columns a {
     text-decoration: none;
