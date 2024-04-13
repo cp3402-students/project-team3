@@ -54,9 +54,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Variables
 --------------------------------------------------------------*/
 :root {
-    --primary-theme-color: #2D69A7;
-    --secondary-theme-color: #3974AD;
-    --button-hover-color: #467cb5;
+    --primary-theme-color: #067325;
+    --secondary-theme-color: #067325;
+    --button-hover-color: #058a0d;
     --theme-background-color: #E2ECFF;
 }
 
