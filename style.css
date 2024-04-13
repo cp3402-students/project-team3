@@ -721,6 +721,20 @@ textarea {
   color: #fff;
 }
 
+/* CTA Signup Button */
+#primary-menu li:last-child a {
+  background-color: #e1631f;
+  border-radius: 2em;
+  box-shadow: none;
+  text-decoration: none;
+  padding: 0.05em 1em;
+}
+
+#primary-menu li:last-child a:hover {
+    background-color: #a84208; /* Darker orange background color on hover */
+}
+
+
 @media screen and (min-width: 37.5em) {
 
     .menu-toggle {
@@ -1268,7 +1282,7 @@ nav ul li:only-child {
 --------------------------------------------- */
 .wp-block-button__link {
     background-color: var(--primary-theme-color);
-    border: 1px solid #fff;
+    /*border: 1px solid #fff;*/
 }
 
 .wp-block-button__link:hover,
