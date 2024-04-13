@@ -55,7 +55,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 :root {
     --primary-theme-color: #2D69A7;
-    --secondary-theme-color: #3C82CB;
+    --secondary-theme-color: #3974AD;
+    --button-hover-color: #467cb5;
     --theme-background-color: #E2ECFF;
 }
 
@@ -715,7 +716,7 @@ textarea {
 
 /* Hamburger menu. */
 .menu-toggle {
-  background-color: #3974AD;
+  background-color: var(--secondary-theme-color);
   border: none;
   font-size: 2em;
   color: #fff;
@@ -1162,7 +1163,7 @@ input[type="submit"] {
     align-items: center;
     flex-direction: column;
     padding: 1em 3em;
-    background-color: #3974AD;
+    background-color: var(--secondary-theme-color);
 }
 
 .site-branding-text {
@@ -1291,7 +1292,7 @@ nav ul li:only-child {
 }
 
 .wp-block-button__link:hover {
-    background-color: #467cb5;
+    background-color: var(--button-hover-color);
 }
 
 .wp-block-button .wp-block-button__link.is-style-outline:not(.has-background), .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background) {
