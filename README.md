@@ -6,3 +6,9 @@
 - John Short
 - Jake Regattieri
 - Matthew Ballarino
+
+# Overview
+The U3A theme was initially developed for U3A Online.
+
+# Documentation
+The documentation for U3A Theme is stored inside the [Wiki](../../wiki)
